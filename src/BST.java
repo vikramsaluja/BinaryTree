@@ -99,7 +99,9 @@ public class BST {
         return preOrderNodes;
     }
 
+    // Pre Order Helper Function
     private void helperPreOrder(BSTNode node, ArrayList<BSTNode> nodeList){
+        // If base case is not hit
         if(node != null){
             nodeList.add(node);
             helperPreOrder(node.getLeft(), nodeList);
@@ -121,6 +123,7 @@ public class BST {
 
     // Helper function for Post Order
     private void helperPostOrder(BSTNode node, ArrayList<BSTNode> nodeList){
+        // If node is not null run steps
         if(node != null){
             helperPostOrder(node.getLeft(), nodeList);
             helperPostOrder(node.getRight(), nodeList);
@@ -152,6 +155,7 @@ public class BST {
         else if(val < node.getVal()){
             node.setRight(helperInsert(node.getRight(), val));
         }
+        // Return altered node
         return node;
     }
 
